@@ -1,0 +1,60 @@
+.game {
+    text-align: center;
+    display: block;
+}
+
+.game table {
+    border-spacing: 3px;
+    table-layout: fixed;
+}
+
+.game .observer {
+    width: 420px;
+    height: 420px;
+}
+
+.game .player {
+    width: 333px;
+    height: 333px;
+}
+
+.game .player-table-wrapper {
+    width: 766px;
+    margin: 0 auto;
+}
+
+.game .player-table-wrapper table {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.game .player-table-wrapper .table-1 {
+    margin-right: 50px;
+}
+
+.game .player-table-wrapper .table-2 {
+    margin-left: 50px;
+}
+
+.game table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #333300;
+}
+
+.game th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+.game td.player-1 {
+    background-color: blue;
+}
+
+.game td.player-2 {
+    background-color: red;
+}
+
+.game td.hitted {
+    background-color: #333300;
+}

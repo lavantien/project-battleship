@@ -1,0 +1,34 @@
+.help {
+    text-align: center;
+    display: block;
+}
+
+.help table {
+    border-spacing: 5px;
+    table-layout: fixed;
+    width: 560px;
+    height: 420px;
+}
+
+.help table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #333300;
+}
+
+.help th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+.help td.team-1 {
+    background-color: blue;
+}
+
+.help td.team-2 {
+    background-color: red;
+}
+
+.help td.hitted {
+    background-color: #333300;
+}

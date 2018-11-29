@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GameComponent } from './game/game.component';
-import { ForgotComponent } from './forgot/forgot.component';
+import { HelpComponent } from './help/help.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: GameComponent
   },
   {
     path: 'login',
@@ -19,12 +20,12 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'forgot',
-    component: ForgotComponent
+    path: 'help',
+    component: HelpComponent
   },
   {
-    path: 'game',
-    component: GameComponent
+    path: 'about',
+    component: AboutComponent
   }
 ];
 

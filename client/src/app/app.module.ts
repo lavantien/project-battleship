@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GameComponent } from './game/game.component';
-import { ForgotComponent } from './forgot/forgot.component';
+import { HelpComponent } from './help/help.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ForgotComponent } from './forgot/forgot.component';
     LoginComponent,
     RegisterComponent,
     GameComponent,
-    ForgotComponent
+    HelpComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
