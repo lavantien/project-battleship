@@ -2,3 +2,13 @@
     text-align: center;
     display: block;
 }
+
+.error {
+    display: none;
+    color: red;
+    font-weight: bold;
+}
+
+.show-div {
+    display: block;
+}

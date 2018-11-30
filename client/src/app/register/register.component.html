@@ -1,20 +1,19 @@
 <div class="register">
   <h1>Register</h1>
   <div>
-    <div>Last name:</div>
-    <input />
-  </div><br />
-  <div>
-    <div>Email:</div>
-    <input />
-  </div><br />
-  <div>
     <div>Username:</div>
-    <input />
+    <input [(ngModel)]="filter.username" />
   </div><br />
   <div>
     <div>Password:</div>
-    <input />
+    <input [(ngModel)]="filter.password" />
   </div><br />
-  <button>Register</button>
+  <div>
+    <div>Re-enter Password:</div>
+    <input [(ngModel)]="filter.repassword" (keyup.enter)="onRegister()" />
+  </div><br />
+  <button (click)="onRegister()">Register</button><br /><br />
+  <div *ngIf="error.usernameExists" class="error">Username exists! Enter another username.</div>
+  <div *ngIf="error.weakPassword" class="error">Weak password! Must has at least 6 characters and includes numbers.</div>
+  <div *ngIf="error.repasswordWrong" class="error">Re-enter password wrong! Please try again.</div>
 </div>

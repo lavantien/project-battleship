@@ -2,11 +2,12 @@
   <h1>Login</h1>
   <div>
     <div>Username:</div>
-    <input />
+    <input [(ngModel)]="filter.username" />
   </div><br />
   <div>
     <div>Password:</div>
-    <input />
+    <input [(ngModel)]="filter.password" (keyup.enter)="onLogin()" />
   </div><br />
-  <button>Login</button>
+  <button (click)="onLogin()">Login</button><br /><br />
+  <div class="error {{class.showDiv}}">Cannot Log in! Wrong username or password.</div>
 </div>

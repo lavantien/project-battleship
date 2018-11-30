@@ -1,28 +1,8 @@
-<div class="game" style="display: none;">
-  <h1>Game Map for Observer</h1>
-  <table class="observer">
-    <tr>
-      <td class="hitted"></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td class="player-1"></td>
-      <td class="player-2"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-</div>
-<div class="game">
-  <h1>Game Map for Player</h1>
-  <div class="player-table-wrapper">
-    <h2><pre>Your setup                              Battle Map</pre></h2>
-    <table class="player table-1">
+<div *ngIf="!isLogin" class="block-access">Please login first to see this page!</div>
+<div *ngIf="isLogin">
+  <div class="game" style="display: none;">
+    <h1>Game Map for Observer</h1>
+    <table class="observer">
       <tr>
         <td class="hitted"></td>
         <td></td>
@@ -39,22 +19,45 @@
         <td></td>
       </tr>
     </table>
-    <table class="player table-2">
-      <tr>
-        <td class="hitted"></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="player-1"></td>
-        <td class="player-2"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
+  </div>
+  <div class="game">
+    <h1>Game Map for Player</h1>
+    <div class="player-table-wrapper">
+      <h2><pre>Your setup                              Battle Map</pre></h2>
+      <table class="player table-1">
+        <tr>
+          <td class="hitted"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="player-1"></td>
+          <td class="player-2"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <table class="player table-2">
+        <tr>
+          <td class="hitted"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="player-1"></td>
+          <td class="player-2"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>

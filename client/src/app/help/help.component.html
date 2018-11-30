@@ -1,4 +1,5 @@
-<div class="help">
+<div *ngIf="!isLogin" class="block-access">Please login first to see this page!</div>
+<div *ngIf="isLogin" class="help">
   <h1>Gameplay Explain</h1>
   <table>
     <tr>

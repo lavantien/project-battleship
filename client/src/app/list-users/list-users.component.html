@@ -1,0 +1,8 @@
+<div *ngIf="!isLogin" class="block-access">Please login as Admin to proceed!</div>
+<div *ngIf="isLogin" class="list-users">
+  <h1>Registed User</h1>
+  <h3>No.&nbsp;Username&nbsp;-&nbsp;Password</h3>
+  <ul>
+    <li *ngFor="let item of users">{{item.id}}.&nbsp;{{item.username}}&nbsp;-&nbsp;{{item.password}}</li>
+  </ul>
+</div>

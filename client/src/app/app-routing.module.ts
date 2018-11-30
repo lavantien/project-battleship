@@ -5,6 +5,8 @@ import { RegisterComponent } from './register/register.component';
 import { GameComponent } from './game/game.component';
 import { HelpComponent } from './help/help.component';
 import { AboutComponent } from './about/about.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'list-users',
+    component: ListUsersComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   }
 ];
 
