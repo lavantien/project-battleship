@@ -33,6 +33,9 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister() {
+    this.error.usernameExists = false;
+    this.error.weakPassword = false;
+    this.error.repasswordWrong = false;
     for (let item of this.users) {
       if (this.filter.username === item.username) {
         this.error.usernameExists = true;

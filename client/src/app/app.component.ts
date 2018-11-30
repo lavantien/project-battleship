@@ -4,7 +4,6 @@ import { GlobalService } from './_service/global.service';
 @Component({
   selector: 'app-root',
   template: `
-    <!--The content below is only a placeholder and can be replaced.-->
     <div style="text-align:center">
       <img width="120" src="../assets/images/tienthai.PNG">
       <div>Welcome, {{username}}</div><hr />

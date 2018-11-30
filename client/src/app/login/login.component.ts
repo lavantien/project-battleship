@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from '../_service/user.service';
 import { User } from '../_model/user';
 import { Router } from '@angular/router';
@@ -9,8 +9,9 @@ import { GlobalService } from '../_service/global.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   users: User[] = [];
+  dataRefresher: any;
 
   filter = {
     username: '',
@@ -26,12 +27,32 @@ export class LoginComponent implements OnInit {
               private _router: Router) { }
 
   ngOnInit() {
-    this._userService.getUsers().subscribe(data => {
+    this.getData();
+    this.refreshData();
+  }
+
+  ngOnDestroy() {
+    this.cancelPageRefresh();
+  }
+
+  getData() {
+    this._userService.getUsers().toPromise().then(data => {
       this.users = data;
+    }, err => {
+      return false;
     });
-    this._userService.getUsers().subscribe(data => {
-      this.users = data;
-    });
+  }
+
+  refreshData() {
+    this.dataRefresher = setInterval(() => {
+      this.getData();
+    }, 1000);
+  }
+
+  cancelPageRefresh() {
+    if (this.dataRefresher) {
+      clearInterval(this.dataRefresher);
+    }
   }
 
   onLogin() {
@@ -41,7 +62,7 @@ export class LoginComponent implements OnInit {
         success = true;
         this._globalService.isLogin = true;
         this._globalService.changeMessage(item.username);
-        if (item.username === 'root') {
+        if (item.username === 'root' || item.username === 'admin') {
           this._globalService.isAdmin = true;
         } else {
           this._globalService.isAdmin = false;
