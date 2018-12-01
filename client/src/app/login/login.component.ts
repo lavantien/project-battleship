@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         success = true;
         this._globalService.isLogin = true;
         this._globalService.changeMessage(item.username);
-        if (item.username === 'root' || item.username === 'admin') {
+        if (item.username === 'tien' || item.username === 'thai') {
           this._globalService.isAdmin = true;
         } else {
           this._globalService.isAdmin = false;

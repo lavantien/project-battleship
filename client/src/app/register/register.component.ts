@@ -54,6 +54,20 @@ export class RegisterComponent implements OnInit {
         this._userService.createUser(newUserDTO).subscribe(data => this.users.push(data));
         this._router.navigate(['/login']);
         break;
+      } 
+    }
+    if (this.users.length == 0) {
+      if (this.filter.password.length < 6) {
+        this.error.weakPassword = true;
+      } else if (this.filter.repassword !== this.filter.password) {
+        this.error.repasswordWrong = true;
+      } else {
+        const newUserDTO = {
+          username: this.filter.username,
+          password: this.filter.password
+        }
+        this._userService.createUser(newUserDTO).subscribe(data => this.users.push(data));
+        this._router.navigate(['/login']);
       }
     }
   }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "http://battleship-client.s3-website-ap-southeast-1.amazonaws.com", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class UserController {

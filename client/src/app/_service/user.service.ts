@@ -9,26 +9,27 @@ import { UserDTO } from '../_model/user-dto';
 })
 export class UserService {
   constructor(private _http: HttpClient) { }
+  private baseUrl = 'http://battleship-server-dev.ap-southeast-1.elasticbeanstalk.com'
 
   getUsers(): Observable<User[]> {
     const options = {
       headers: new HttpHeaders({'Content-Type':  'application/json'})
     };
-    return this._http.get<User[]>('/api/users', options);
+    return this._http.get<User[]>(this.baseUrl + '/api/users', options);
   }
 
   createUser(user: UserDTO): Observable<User> {
     const options = {
       headers: new HttpHeaders({'Content-Type':  'application/json'})
     };
-    return this._http.post<User>('/api/users', JSON.stringify(user), options);
+    return this._http.post<User>(this.baseUrl + '/api/users', JSON.stringify(user), options);
   }
 
   getUserById(id: number): Observable<User> {
     const options = {
       headers: new HttpHeaders({'Content-Type':  'application/json'})
     };
-    return this._http.get<User>('/api/users/' + id.toString, options);
+    return this._http.get<User>(this.baseUrl + '/api/users/' + id.toString, options);
   }
 
   updateUserById(id: number, user: User): Observable<User> {
@@ -38,20 +39,20 @@ export class UserService {
     const options = {
       headers: new HttpHeaders({'Content-Type':  'application/json'})
     };
-    return this._http.put<User>('/api/users/' + id.toString, params, options);
+    return this._http.put<User>(this.baseUrl + '/api/users/' + id.toString, params, options);
   }
 
   deleteUserById(id: number): Observable<any> {
     const options = {
       headers: new HttpHeaders({'Content-Type':  'application/json'})
     };
-    return this._http.delete<any>('/api/users/' + id.toString, options);
+    return this._http.delete<any>(this.baseUrl + '/api/users/' + id.toString, options);
   }
 
   searchUsersByUsername(username: string): Observable<User[]> {
     const options = {
       headers: new HttpHeaders({'Content-Type':  'application/json'})
     };
-    return this._http.get<User[]>('/api/users//' + username, options);
+    return this._http.get<User[]>(this.baseUrl + '/api/users//' + username, options);
   }
 }
