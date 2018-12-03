@@ -10,12 +10,20 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@CrossOrigin(origins = "http://battleship-client.s3-website-ap-southeast-1.amazonaws.com", maxAge = 3600)
+// Localhost Environment
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+// Cloud Environment
+//@CrossOrigin(origins = "http://battleship-client.s3-website-ap-southeast-1.amazonaws.com", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class UserController {
-    @Autowired
+    private final
     UserRepository userRepository;
+
+    @Autowired
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     // Get All Users
     @GetMapping("/users")
@@ -41,8 +49,7 @@ public class UserController {
         User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User", "id", userId));
         user.setUsername(userDetails.getUsername());
         user.setPassword(userDetails.getPassword());
-        User updatedUser = userRepository.save(user);
-        return updatedUser;
+        return userRepository.save(user);
     }
 
     // Delete a User

@@ -5,6 +5,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class GlobalService {
+  // Localhost Environment
+  baseUrl = 'http://localhost:5000';
+  // Cloud Environment
+  // baseUrl = 'http://battleship-server-dev.ap-southeast-1.elasticbeanstalk.com';
   isLogin = false;
   isAdmin = false;
   private messageSource = new BehaviorSubject('Guess');

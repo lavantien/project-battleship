@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://battleship-server-dev.ap-southeast-1.elasticbeanstalk.com/",
+    "target": "http://localhost:5000",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
